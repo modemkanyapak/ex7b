@@ -10,7 +10,9 @@ function checkSID() {
 
 function checkCandiNo() {
   let candi = (document.getElementById("candi").value).trim();
-  if (isNaN(candi) || candi < 1) {
+  let numCandi = Number(candi);
+// ตรวจสอบว่าเป็นตัวเลข และอยู่ในช่วง 1 - 10
+  if (!Number.isInteger(numCandi) || numCandi < 1 || numCandi > 10) {
     return false;
   } else {
     return true;
@@ -24,7 +26,7 @@ function validateForm(){
 	  return false;
 	}else{
 		if(!checkCandiNo()){
-		  alert("Invalid value for Candidate No!!");
+		  alert("Invalid value for Candidate No. (1-10) !!");
 		  document.getElementById("candi").focus();
 		  return false;
 		}else{
