@@ -1,7 +1,6 @@
 function checkSID() {
   let sid = (document.getElementById("sid").value).trim();
-  // ตรวจสอบว่าเป็นตัวเลขล้วนและมีความยาว 10 ตัว
-  if (!isNaN(sid) && sid.length === 10) {
+  if (sid.length == 10) {
     return true;
   } else {
     return false;
